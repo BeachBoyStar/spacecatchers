@@ -1,6 +1,6 @@
 # 🚀 Stellar Harmony - A Musical Space Adventure
 
-![Stellar Harmony](https://img.shields.io/badge/Game-Stellar%20Harmony-brightgreen](https://beachboystar.github.io/spacecatchers/))
+![Stellar Harmony](https://beachboystar.github.io/spacecatchers/)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
 ![HTML5](https://img.shields.io/badge/HTML5-Canvas-orange)
 ![CSS3](https://img.shields.io/badge/CSS3-Animations-blue)
