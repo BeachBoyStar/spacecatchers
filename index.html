@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Harmony - A Musical Space Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="gameUI">
+            <div id="topBar">
+                <div id="scoreContainer">
+                    <span id="scoreLabel">HARMONY SCORE</span>
+                    <span id="score">0</span>
+                </div>
+                <div id="healthContainer">
+                    <span id="healthLabel">ENERGY</span>
+                    <div id="healthBar">
+                        <div id="healthFill"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="menuScreen" class="screen active">
+                <div id="title">
+                    <h1>STELLAR HARMONY</h1>
+                    <p>Navigate the cosmos, collect musical notes, create beautiful melodies</p>
+                </div>
+                <div id="menuButtons">
+                    <button id="startBtn" class="game-btn primary">Start Journey</button>
+                    <button id="settingsBtn" class="game-btn secondary">Settings</button>
+                    <button id="instructionsBtn" class="game-btn secondary">How to Play</button>
+                </div>
+            </div>
+
+            <div id="settingsScreen" class="screen">
+                <div class="settings-content">
+                    <h2>Game Settings</h2>
+                    <div class="setting-group">
+                        <label>Visual Theme</label>
+                        <select id="themeSelect" class="setting-select">
+                            <option value="cosmic">Cosmic Dream</option>
+                            <option value="neon">Neon Pulse</option>
+                            <option value="sunset">Sunset Voyage</option>
+                            <option value="ocean">Ocean Depths</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Particle Density</label>
+                        <input type="range" id="particleDensity" min="0" max="100" value="50" class="setting-slider">
+                    </div>
+                    <div class="setting-group">
+                        <label>Music Volume</label>
+                        <input type="range" id="musicVolume" min="0" max="100" value="70" class="setting-slider">
+                    </div>
+                    <div class="setting-group">
+                        <label>Game Difficulty</label>
+                        <select id="difficultySelect" class="setting-select">
+                            <option value="easy">Peaceful Journey</option>
+                            <option value="normal" selected>Standard Flight</option>
+                            <option value="hard">Expert Navigator</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Visual Effects</label>
+                        <div class="toggle-container">
+                            <label class="toggle">
+                                <input type="checkbox" id="trailsToggle" checked>
+                                <span class="toggle-slider"></span>
+                                Ship Trails
+                            </label>
+                            <label class="toggle">
+                                <input type="checkbox" id="glowToggle" checked>
+                                <span class="toggle-slider"></span>
+                                Glow Effects
+                            </label>
+                            <label class="toggle">
+                                <input type="checkbox" id="shakeToggle" checked>
+                                <span class="toggle-slider"></span>
+                                Screen Shake
+                            </label>
+                        </div>
+                    </div>
+                    <button id="settingsBackBtn" class="game-btn secondary">Back to Menu</button>
+                </div>
+            </div>
+
+            <div id="instructionsScreen" class="screen">
+                <div class="instructions-content">
+                    <h2>How to Play Stellar Harmony</h2>
+                    <div class="instruction-item">
+                        <span class="key">WASD</span> or <span class="key">Arrow Keys</span> - Navigate your ship
+                    </div>
+                    <div class="instruction-item">
+                        <span class="note-icon">♪</span> Collect musical notes to create harmony
+                    </div>
+                    <div class="instruction-item">
+                        <span class="obstacle-icon">⚡</span> Avoid cosmic obstacles
+                    </div>
+                    <div class="instruction-item">
+                        <span class="score-icon">★</span> Higher harmony creates better scores
+                    </div>
+                    <button id="backBtn" class="game-btn secondary">Back to Menu</button>
+                </div>
+            </div>
+
+            <div id="gameOverScreen" class="screen">
+                <div class="game-over-content">
+                    <h2>Journey Complete</h2>
+                    <div id="finalScore">Your Harmony Score: <span id="finalScoreValue">0</span></div>
+                    <div id="achievements"></div>
+                    <div class="game-over-buttons">
+                        <button id="restartBtn" class="game-btn primary">New Journey</button>
+                        <button id="menuBtn" class="game-btn secondary">Main Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="particles"></div>
+    </div>
+
+    <audio id="gameAudio" loop>
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+Dzu2IcBjaA7+K+SAUg" type="audio/wav">
+    </audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
